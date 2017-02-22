@@ -22,5 +22,21 @@
   <body>
     <wistia-embed>Loading Wisita embed here...</wistia-embed>
     <script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+    <script>
+    window._wq = window._wq || [];
+    _wq.push({
+      id: "_all",
+      options: {
+        playerColor: "#56be8e"
+      },
+      onReady: function(video) {
+        console.log("The video is ready! Here it is: ", video);
+        video.bind('play', function() {
+          console.log(video.name() + " just started playing. 🎉");
+        });
+      }
+    });
+
+    </script>
   </body>
 </html>
